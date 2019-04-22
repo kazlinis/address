@@ -1,0 +1,25 @@
+.div.container
+  .row
+  .col-md-12
+    %h4 Address book
+    .text-right
+      =link_to "Go Back", root_path, {class: "button btn btn-secondary", :style => "margin-top:-40px"}
+      = link_to "Delete", @address, method: :delete, data: { confirm: "Are you sure?" }, class: "button btn btn-danger", :style => "margin-top:-40px"
+    %hr/
+    %h5 Edit contact
+    = simple_form_for(@address, html: { class: 'form'}) do |f|
+      .form-group
+        = f.input :company, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :title, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :street_name, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :city, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :country, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :postal_code, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :phone_number, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      %button.btn.btn-info{:type => "submit"} Submit

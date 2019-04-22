@@ -1,0 +1,15 @@
+%h1.title Address book
+%h2.title Add contact
+.container
+.row
+  = simple_form_for(@address, html: { class: 'form-inline'}) do |f|
+    .table.table-striped
+      .control
+        = f.input :company, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+        = f.input :title, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-primary"'}
+        = f.input :street_name, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label'}
+        = f.input :city, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label'}
+        = f.input :country, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label'}
+        = f.input :postal_code, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label'}
+        = f.input :phone_number, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label'}
+        = f.button :submit, 'Add Address'

@@ -1,0 +1,24 @@
+.div.container
+  .row
+  .col-md-12
+    %h4 Address book
+    .text-right
+      =link_to "Go Back", root_path, {class: "button btn btn-secondary", :style => "margin-top:-30px"}
+    %hr/
+    %h5 Add contact
+    = simple_form_for(@address, html: { class: 'form'}) do |f|
+      .form-group
+        = f.input :company, input_html: {class: 'form-control', required: true}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :title, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :street_name, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :city, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :country, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :postal_code, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      .form-group
+        = f.input :phone_number, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+      %button.btn.btn-primary{:type => "submit"} Submit

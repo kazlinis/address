@@ -1,0 +1,21 @@
+.container
+  .row
+    .col-md-12
+      %h4 Contact information
+      .text-right
+        =link_to "Go Back", root_path, {class: "button btn btn-secondary", :style => "margin-top:-40px"}
+        =link_to "Edit", edit_address_path, {class: "button btn btn-info", :style => "margin-top:-40px"}
+      %hr/
+      .card.card-body.bg-light
+        .h4
+          = @address.company
+        .p 
+          = @address.company
+        .p
+          = @address.title
+        .p
+          = "#{@address.street_name}, #{@address.city}, #{@address.country}, #{@address.postal_code}, #{@address.phone_number}"
+        .p
+          = @address.country
+        .p
+          = @address.phone_number
