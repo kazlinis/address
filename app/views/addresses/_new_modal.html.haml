@@ -1,0 +1,23 @@
+#new-modal.modal.fade{:role => "dialog"}
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %h2 Add Contact
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      .modal-body
+        = simple_form_for @address do |f|
+          .form-group
+            = f.input :company
+          .form-group
+            = f.input :title
+          .form-group
+            = f.input :street_name
+          .form-group
+            = f.input :city
+          .form-group
+            = f.input :country
+          .form-group
+            = f.input :postal_code
+          .form-group
+            = f.input :phone_number
+          %button.btn.btn-primary{:type => "submit"} Submit

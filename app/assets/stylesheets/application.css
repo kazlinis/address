@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+.pagination li>a {
+  color:#5A6268;
+  margin-left:5px;
+  border-radius: 50% !important;
+}
+
+h4 {
+  margin-top:20px !important;
+}
+
+.btn.btn-square {
+  border-radius: 0;
+}
+
+.alert{
+  align-items: center;
+  margin-top: 15px;
+  padding: 0;
+}

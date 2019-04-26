@@ -1,10 +1,10 @@
 .container
   .col-md-12
-    %h4 Address book
+    %h4 Address Book
+    .text-right
+      =link_to "Add Contact", new_address_path, {class: "button btn btn-primary btn-square", :style => "margin-top:-40px", remote: true}
+      = link_to_next_page @addresses, ''
     %hr/
-    .btn-toolbar
-  = link_to "New Address", new_address_path, class: "button btn btn-info"
-  = link_to_next_page @addresses, ''
   .card.card-body.bg-light
     %table.table.table-hover
       %thead.thead-dark
@@ -16,11 +16,15 @@
       %tbody
         - @addresses.each do |address|
           %tr
-            %td= address.company
-            %td= address.title
-            %td= "#{address.street_name}, #{address.city}, #{address.country}, #{address.postal_code}, #{address.phone_number}"
+            %td{onclick: 'copy(this)'}= address.company
+            %td{onclick: 'copy(this)'}= address.title
+            %td{onclick: 'copy(this)'}= "#{address.street_name}, #{address.city}, #{address.country}, #{address.postal_code}, #{address.phone_number}"
             %td.text-right
-              = link_to "Review", address, class: "button btn btn-secondary"
-              = link_to "Edit", edit_address_path(address.id), class: "button btn btn-info"
-              = link_to "Delete", address_path(address.id), method: :delete, data: { confirm: "Are you sure?" }, class: "button btn btn-danger"
-  = paginate @addresses
+              = link_to "Review", address, class: "button btn btn-square btn-secondary"
+              = link_to "Edit", edit_address_path(address.id), class: "button btn btn-square btn-info", remote: true
+              = link_to "Delete", address_path(address.id), method: :delete, data: { confirm: "Are you sure?" }, class: "button btn btn-danger btn-square", remote: true
+    %pagination
+      = paginate @addresses
+      = page_entries_info @addresses
+#edit-content
+#new-content

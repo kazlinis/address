@@ -29,7 +29,8 @@ gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'simple_form', '~> 4.1'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'country_select'
-
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'jquery-ui-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -14,3 +14,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+
+function copy(that){
+  var inp =document.createElement('input');
+  document.body.appendChild(inp)
+  inp.value =that.textContent
+  inp.select();
+  document.execCommand('copy',false);
+  inp.remove();
+  $(".alert").removeClass("fade").show();
+  $(".alert").delay(200).addClass("in").fadeOut(2500);
+}

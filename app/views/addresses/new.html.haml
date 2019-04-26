@@ -6,19 +6,19 @@
       =link_to "Go Back", root_path, {class: "button btn btn-secondary", :style => "margin-top:-30px"}
     %hr/
     %h5 Add contact
-    = simple_form_for(@address, html: { class: 'form'}) do |f|
+    = simple_form_for @address do |f|
       .form-group
-        = f.input :company, input_html: {class: 'form-control', required: true}, wrapper: false, label_html: {class: 'label label-default'}
+        = f.input :company
       .form-group
-        = f.input :title, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+        = f.input :title
       .form-group
-        = f.input :street_name, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+        = f.input :street_name
       .form-group
-        = f.input :city, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+        = f.input :city
       .form-group
-        = f.input :country, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+        = f.input :country
       .form-group
-        = f.input :postal_code, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+        = f.input :postal_code
       .form-group
-        = f.input :phone_number, input_html: {class: 'form-control'}, wrapper: false, label_html: {class: 'label label-default'}
+        = f.input :phone_number
       %button.btn.btn-primary{:type => "submit"} Submit

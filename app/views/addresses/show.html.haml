@@ -1,10 +1,10 @@
 .container
   .row
     .col-md-12
-      %h4 Contact information
+      %h4 Contact Information
       .text-right
-        =link_to "Go Back", root_path, {class: "button btn btn-secondary", :style => "margin-top:-40px"}
-        =link_to "Edit", edit_address_path, {class: "button btn btn-info", :style => "margin-top:-40px"}
+        = link_to "Go Back", root_path, {class: "button btn btn-primary btn-square", :style => "margin-top:-60px"}
+        = link_to "Delete", address_path(@address.id), method: :delete, data: { confirm: "Are you sure?" }, class: "button btn btn-danger btn-square", :style => "margin-top: -60px"
       %hr/
       .card.card-body.bg-light
         .h4
